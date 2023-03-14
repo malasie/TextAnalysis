@@ -25,9 +25,8 @@ def extract_information(pdf_path):
 
 
 extract_information("pdf.pdf")
+#%%
 
-with open("pdf.pdf", 'rb') as f:
-    pdf = PdfReader(f)
-    information = pdf.metadata
-    number_of_pages = len(pdf.pages)
-    print(pdf.pages(1))
+reader = PdfReader("Analiza3.pdf")
+page = reader.pages[0]
+print(page.extract_text())
