@@ -73,12 +73,10 @@ def text_preparation(text, language='english'):
     words = [w for w in words2 if w.lower() not in stopwords]
 
     
-            
-
     lemmatizer = WordNetLemmatizer()
 
     for i in range(len(words)):
-        words[i] = lemmatizer.lemmatize(words[i])
+        words[i] = lemmatizer.lemmatize(words[i], 'v')
     
     return words
 
@@ -89,11 +87,14 @@ def wordCloud(word_list, info='', filename='', path='', width = 500, height = 30
     
     wordcloud = WordCloud(width = width, height = height,
                colormap = colormap).generate(" ".join(word_list))
+    
+    page, ax = plt.subplots(nrows = 1, ncols = 1, dpi = 100, 
+                                   constrained_layout = True)
 
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis("off")
+    ax.imshow(wordcloud, interpolation='bilinear')
+    ax.axis("off")
     if info!='':
-        plt.title(info.author+', '+'"'+info.title+'"')
+        page.suptitle(info.author+', '+'"'+info.title+'"')
     plt.show()
     
     if filename!='':
@@ -101,9 +102,9 @@ def wordCloud(word_list, info='', filename='', path='', width = 500, height = 30
             if not os.path.isdir(path):
                 os.makedirs(path)
         
-            plt.savefig('{path}/{name}.jpg'.format(path = path, name = filename))
+            page.savefig('{path}/{name}.jpg'.format(path = path, name = filename))
         else:
-            plt.savefig('{name}.jpg'.format(name = filename))
+            page.savefig('{name}.jpg'.format(name = filename))
     
 
 #%%
@@ -115,10 +116,9 @@ def program(pdf_path, language='english', filename='', path='', width = 500, hei
    for page in range(number_of_pages):
        text = read_page(pdf_path, page)
        word_list.extend(text_preparation(text, language))
-   print(word_list)
    wordCloud(word_list, information, filename, path, width, height, background, colormap)
    
 #%%
-program('The Stranger - Albert Camus.pdf')
+program('The Stranger - Albert Camus.pdf', filename="stranger")
 
 
