@@ -4,12 +4,14 @@ import os
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import nltk
+#nltk.download('omw-1.4')
 from nltk.stem import WordNetLemmatizer
 
 import re
  
 
 '''
+
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('stopwords')
