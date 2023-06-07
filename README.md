@@ -1,5 +1,22 @@
 # MaOW - Map Of Words
 
+
+### Spis Treści
+
+- Specyfikacja wymagań
+    - Opis ogólny
+    - Wymagania funkcjonalne
+    - Wymagania niefunkcjonalne
+    - Wymagania dotyczące interfejsu użytkownika
+- Metody
+    - program
+    - extract_information
+    - read_page
+    - text_preparation
+    - wordCloud
+    - section_clouds
+
+
 # Specyfikacja wymagań
 
 ### Opis ogólny:
