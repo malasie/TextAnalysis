@@ -41,7 +41,7 @@ def extract_information(pdf_path):
     return information, number_of_pages 
 
 
-extract_information("pdf.pdf")
+extract_information("The Stranger - Albert Camus.pdf")
 #%%
 def read_page(pdf_path, page):
     reader = PdfReader(pdf_path)

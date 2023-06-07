@@ -74,7 +74,7 @@ def wordCloud(word_list, info='', filename='', path='', width = 500, height = 30
             page.savefig('{name}.jpg'.format(name = filename))
             
             
-def program(pdf_path, language='english', filename='', path='', width = 500, height = 300, background = "white",
+def program(pdf_path, language='english', plot=['cloud', 'clouds', 'map'], filename='', path='', width = 500, height = 300, background = "white",
                colormap = "magma"):
     
     languages=['english']
@@ -91,4 +91,4 @@ def program(pdf_path, language='english', filename='', path='', width = 500, hei
     wordCloud(word_list, information, filename, path, width, height, background, colormap)
    
 #%%
-program('The Stranger - Albert Camus.pdf', filename="stranger", colormap = "viridis")
+program('nlp.pdf', filename="stranger", colormap = "viridis")

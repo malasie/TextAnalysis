@@ -124,5 +124,5 @@ def program(pdf_path, language='english', filename='', path='', width = 1000, he
 
    
 #%%
-program('The Stranger - Albert Camus.pdf', filename="stranger", colormap = "viridis")
+program('Ecology and Evolution - 2021 - Shetty - pyResearchInsights An open‐source Python package for scientific text analysis.pdf', filename="stranger", colormap = "viridis")
 
